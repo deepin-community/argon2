@@ -1,3 +1,57 @@
+argon2 (0~20190702+dfsg-3) unstable; urgency=medium
+
+  * QA upload
+  * d/rules: Restore threading support to libargon2-1-udeb (closes: #1034696).
+    This is beneficial for cryptsetup-udeb, see #1028250.  Removing threading
+    support in libargon2-1-udeb was done for historical reasons no longer
+    relevant since Debian Bookworm.
+
+ -- Guilhem Moulin <guilhem@debian.org>  Fri, 21 Apr 2023 19:48:56 +0200
+
+argon2 (0~20190702+dfsg-2) unstable; urgency=medium
+
+  * QA upload
+  * Add Breaks on cryptsetup-initramfs (see #1032235)
+
+ -- Bastian Germann <bage@debian.org>  Thu, 16 Mar 2023 00:16:03 +0100
+
+argon2 (0~20190702+dfsg-1) experimental; urgency=medium
+
+  * QA upload
+  * Orphan the package (see #1032462)
+  * Exclude non-source pdf and Windows build files
+  * Pay attention to missing build flags
+
+ -- Bastian Germann <bage@debian.org>  Mon, 13 Mar 2023 12:00:19 +0100
+
+argon2 (0~20190702-0.1) unstable; urgency=medium
+
+  * Non-maintainer upload
+  * Only build udeb without threads (Closes: #1014110)
+
+  [ Ondřej Nový ]
+  * d/copyright: Use https protocol in Format field (Closes: #1032102)
+  * New upstream version 0~20190702 (Closes: #1012682)
+
+  [ Laurent Bigonville ]
+  * debian/patches/: Refresh the patches
+  * Drop transitional libargon2-0 package (Closes: #902858)
+
+  [ Debian Janitor ]
+  * Set upstream metadata fields: Bug-Database.
+  * Set upstream metadata fields: Bug-Submit.
+  * Remove constraints unnecessary since buster (oldstable):
+    + Build-Depends: Drop versioned constraint on dh-exec.
+
+ -- Bastian Germann <bage@debian.org>  Tue, 28 Feb 2023 11:58:57 +0100
+
+argon2 (0~20171227-0.3) unstable; urgency=medium
+
+  * Non-maintainer upload.
+  * Fix FTBFS on kfreebsd architectures (Closes: #1004304)
+
+ -- Laurent Bigonville <bigon@debian.org>  Sun, 13 Feb 2022 10:41:34 +0100
+
 argon2 (0~20171227-0.2) unstable; urgency=medium
 
   * Non-maintainer upload.

@@ -1,7 +1,13 @@
-Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Upstream-Name: phc-winner-argon2
 Source: https://github.com/P-H-C/phc-winner-argon2
 Upstream-Contact: https://github.com/P-H-C/phc-winner-argon2/issues
+Files-Excluded:
+# non-source
+  argon2-specs.pdf
+# Windows build
+  Argon2.sln
+  vs2015
 
 Files: *
 Copyright: 2015, Daniel Dinu

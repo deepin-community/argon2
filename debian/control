@@ -1,8 +1,8 @@
 Source: argon2
 Priority: optional
-Maintainer: Luca Bruno <lucab@debian.org>
+Maintainer: Debian QA Group <packages@qa.debian.org>
 Build-Depends: debhelper (>= 9),
-               dh-exec (>=0.3)
+               dh-exec
 Standards-Version: 4.1.4
 Section: libs
 Homepage: https://github.com/P-H-C/phc-winner-argon2
@@ -13,9 +13,6 @@ Package: libargon2-dev
 Section: libdevel
 Architecture: any
 Depends: libargon2-1 (= ${binary:Version}), ${misc:Depends}
-Provides: libargon2-0-dev
-Replaces: libargon2-0-dev
-Conflicts: libargon2-0-dev
 Multi-Arch: same
 Description: memory-hard hashing function - development files
  Argon2 is a password-hashing function that can be used to hash passwords
@@ -34,32 +31,11 @@ Description: memory-hard hashing function - development files
  This package contains headers and libraries for developing program based
  on argon2.
 
-Package: libargon2-0
-Section: libdevel
-Architecture: any
-Depends: libargon2-1 (= ${binary:Version})
-Description: memory-hard hashing function - runtime library
- Argon2 is a password-hashing function that can be used to hash passwords
- for credential storage, key derivation, or other applications.
- .
- There are two main versions of Argon2: Argon2i and Argon2d.
- Argon2i is the safest against side-channel attacks, while Argon2d provides
- the highest resistance against GPU cracking attacks.
- .
- Argon2i and Argon2d are parametrized by:
-  * A time cost, which defines the amount of computation realized and
-    therefore the execution time, given in number of iterations
-  * A memory cost, which defines the memory usage, given in kibibytes
-  * A parallelism degree, which defines the number of parallel threads
- .
- This package provides compatibility for packages built against older
- versions of libargon2.
-
-
 Package: libargon2-1
 Architecture: any
 Pre-Depends: ${misc:Pre-Depends}
 Depends: ${shlibs:Depends}, ${misc:Depends}
+Breaks: cryptsetup-initramfs (<<2:2.6.1-2)
 Multi-Arch: same
 Description: memory-hard hashing function - runtime library
  Argon2 is a password-hashing function that can be used to hash passwords

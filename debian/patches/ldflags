@@ -1,0 +1,21 @@
+From: Bastian Germann <bage@debian.org>
+Date: Wed, 8 Mar 2023 22:56:27 +0100
+Subject: testcase: Build with LDFLAGS
+
+---
+ Makefile | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/Makefile b/Makefile
+index 837e7f7..260c11f 100644
+--- a/Makefile
++++ b/Makefile
+@@ -215,7 +215,7 @@ dist:
+ 
+ .PHONY: test
+ test:           $(SRC) src/test.c
+-		$(CC) $(CFLAGS)  -Wextra -Wno-type-limits $^ -o testcase
++		$(CC) $(CFLAGS) $(LDFLAGS) -Wextra -Wno-type-limits $^ -o testcase
+ 		@sh kats/test.sh
+ 		./testcase
+ 
